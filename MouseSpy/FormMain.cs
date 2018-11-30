@@ -10,11 +10,11 @@ using Win32API;
 
 namespace MouseSpy
 {
-	public partial class Form1 : Form
+	public partial class FormMain : Form
 	{
 		IntPtr dc = IntPtr.Zero;
 
-		public Form1()
+		public FormMain()
 		{
 			InitializeComponent();
 		}
@@ -77,16 +77,21 @@ namespace MouseSpy
 
 			Point screen;
 			Input.GetCursorPos(out screen);
+			
 
-			Point offset, client;
+			Rectangle rect = new Rectangle();
+			Window.GetWindowRect(foreground, out rect);
+
+			Point window = new Point(screen.X - rect.X, screen.Y - rect.Y);
+
+			Point offset = new Point(0, 0);
 			Window.ScreenToClient(foreground, out offset);
-			client = screen;
+			Point client = new Point(screen.X, screen.Y);
 			client.Offset(offset);
 
-			txtScreenX.Text = string.Format("{0}", screen.X);
-			txtScreenY.Text = string.Format("{0}", screen.Y);
-			txtClientX.Text = string.Format("{0}", client.X);
-			txtClientY.Text = string.Format("{0}", client.Y);
+			txtScreenXY.Text = string.Format("{0}, {1}", screen.X, screen.Y);			
+			txtWindowXY.Text = string.Format("{0}, {1}", window.X, window.Y);
+			txtClientXY.Text = string.Format("{0}, {1}", client.X, client.Y);
 
 			int pixel = GDI.GetPixel(dc, screen.X, screen.Y);
 			Color color = Color.FromArgb(pixel);

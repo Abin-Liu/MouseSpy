@@ -1,6 +1,6 @@
 ﻿namespace MouseSpy
 {
-	partial class Form1
+	partial class FormMain
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.txtClassName = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
@@ -41,14 +41,12 @@
 			this.txtPixelHex = new System.Windows.Forms.TextBox();
 			this.txtPixelDec = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.txtClientY = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
-			this.txtScreenY = new System.Windows.Forms.TextBox();
-			this.txtClientX = new System.Windows.Forms.TextBox();
+			this.txtClientXY = new System.Windows.Forms.TextBox();
+			this.txtWindowXY = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.txtScreenX = new System.Windows.Forms.TextBox();
+			this.txtScreenXY = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.lblPropmt = new System.Windows.Forms.Label();
@@ -133,14 +131,12 @@
 			this.groupBox2.Controls.Add(this.txtPixelHex);
 			this.groupBox2.Controls.Add(this.txtPixelDec);
 			this.groupBox2.Controls.Add(this.label9);
-			this.groupBox2.Controls.Add(this.txtClientY);
 			this.groupBox2.Controls.Add(this.label8);
-			this.groupBox2.Controls.Add(this.label7);
-			this.groupBox2.Controls.Add(this.txtScreenY);
-			this.groupBox2.Controls.Add(this.txtClientX);
+			this.groupBox2.Controls.Add(this.txtClientXY);
+			this.groupBox2.Controls.Add(this.txtWindowXY);
 			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Controls.Add(this.label6);
-			this.groupBox2.Controls.Add(this.txtScreenX);
+			this.groupBox2.Controls.Add(this.txtScreenXY);
 			this.groupBox2.Controls.Add(this.label4);
 			this.groupBox2.Location = new System.Drawing.Point(12, 140);
 			this.groupBox2.Name = "groupBox2";
@@ -153,7 +149,7 @@
 			// 
 			this.txtPixelHex.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.txtPixelHex.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtPixelHex.Location = new System.Drawing.Point(292, 76);
+			this.txtPixelHex.Location = new System.Drawing.Point(292, 51);
 			this.txtPixelHex.Name = "txtPixelHex";
 			this.txtPixelHex.ReadOnly = true;
 			this.txtPixelHex.Size = new System.Drawing.Size(107, 20);
@@ -163,7 +159,7 @@
 			// 
 			this.txtPixelDec.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.txtPixelDec.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtPixelDec.Location = new System.Drawing.Point(84, 76);
+			this.txtPixelDec.Location = new System.Drawing.Point(292, 21);
 			this.txtPixelDec.Name = "txtPixelDec";
 			this.txtPixelDec.ReadOnly = true;
 			this.txtPixelDec.Size = new System.Drawing.Size(107, 20);
@@ -172,96 +168,77 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(222, 79);
+			this.label9.Location = new System.Drawing.Point(222, 55);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(57, 13);
 			this.label9.TabIndex = 10;
 			this.label9.Text = "Pixel HEX:";
 			// 
-			// txtClientY
-			// 
-			this.txtClientY.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.txtClientY.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtClientY.Location = new System.Drawing.Point(292, 50);
-			this.txtClientY.Name = "txtClientY";
-			this.txtClientY.ReadOnly = true;
-			this.txtClientY.Size = new System.Drawing.Size(107, 20);
-			this.txtClientY.TabIndex = 7;
-			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(14, 79);
+			this.label8.Location = new System.Drawing.Point(222, 24);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(57, 13);
 			this.label8.TabIndex = 8;
 			this.label8.Text = "Pixel DEC:";
 			// 
-			// label7
+			// txtClientXY
 			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(222, 54);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(46, 13);
-			this.label7.TabIndex = 6;
-			this.label7.Text = "Client Y:";
+			this.txtClientXY.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.txtClientXY.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.txtClientXY.Location = new System.Drawing.Point(84, 79);
+			this.txtClientXY.Name = "txtClientXY";
+			this.txtClientXY.ReadOnly = true;
+			this.txtClientXY.Size = new System.Drawing.Size(107, 20);
+			this.txtClientXY.TabIndex = 3;
 			// 
-			// txtScreenY
+			// txtWindowXY
 			// 
-			this.txtScreenY.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.txtScreenY.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtScreenY.Location = new System.Drawing.Point(292, 24);
-			this.txtScreenY.Name = "txtScreenY";
-			this.txtScreenY.ReadOnly = true;
-			this.txtScreenY.Size = new System.Drawing.Size(107, 20);
-			this.txtScreenY.TabIndex = 3;
-			// 
-			// txtClientX
-			// 
-			this.txtClientX.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.txtClientX.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtClientX.Location = new System.Drawing.Point(84, 50);
-			this.txtClientX.Name = "txtClientX";
-			this.txtClientX.ReadOnly = true;
-			this.txtClientX.Size = new System.Drawing.Size(107, 20);
-			this.txtClientX.TabIndex = 5;
+			this.txtWindowXY.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.txtWindowXY.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.txtWindowXY.Location = new System.Drawing.Point(84, 51);
+			this.txtWindowXY.Name = "txtWindowXY";
+			this.txtWindowXY.ReadOnly = true;
+			this.txtWindowXY.Size = new System.Drawing.Size(107, 20);
+			this.txtWindowXY.TabIndex = 5;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(222, 28);
+			this.label5.Location = new System.Drawing.Point(14, 83);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(54, 13);
+			this.label5.Size = new System.Drawing.Size(56, 13);
 			this.label5.TabIndex = 2;
-			this.label5.Text = "Screen Y:";
+			this.label5.Text = "Client  XY:";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(14, 54);
+			this.label6.Location = new System.Drawing.Point(14, 55);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(46, 13);
+			this.label6.Size = new System.Drawing.Size(66, 13);
 			this.label6.TabIndex = 4;
-			this.label6.Text = "Client X:";
+			this.label6.Text = "Window XY:";
 			// 
-			// txtScreenX
+			// txtScreenXY
 			// 
-			this.txtScreenX.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.txtScreenX.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtScreenX.Location = new System.Drawing.Point(84, 24);
-			this.txtScreenX.Name = "txtScreenX";
-			this.txtScreenX.ReadOnly = true;
-			this.txtScreenX.Size = new System.Drawing.Size(107, 20);
-			this.txtScreenX.TabIndex = 1;
+			this.txtScreenXY.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.txtScreenXY.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.txtScreenXY.Location = new System.Drawing.Point(84, 24);
+			this.txtScreenXY.Name = "txtScreenXY";
+			this.txtScreenXY.ReadOnly = true;
+			this.txtScreenXY.Size = new System.Drawing.Size(107, 20);
+			this.txtScreenXY.TabIndex = 1;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Location = new System.Drawing.Point(14, 28);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(54, 13);
+			this.label4.Size = new System.Drawing.Size(61, 13);
 			this.label4.TabIndex = 0;
-			this.label4.Text = "Screen X:";
+			this.label4.Text = "Screen XY:";
 			// 
 			// timer1
 			// 
@@ -279,7 +256,7 @@
 			this.lblPropmt.TabIndex = 3;
 			this.lblPropmt.Text = "Hold/release the CTRL key to start/stop capturing...";
 			// 
-			// Form1
+			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -291,7 +268,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "Form1";
+			this.Name = "FormMain";
 			this.Text = "MouseSpy";
 			this.TopMost = true;
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -318,14 +295,12 @@
 		private System.Windows.Forms.TextBox txtPixelHex;
 		private System.Windows.Forms.TextBox txtPixelDec;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox txtClientY;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.TextBox txtScreenY;
-		private System.Windows.Forms.TextBox txtClientX;
+		private System.Windows.Forms.TextBox txtClientXY;
+		private System.Windows.Forms.TextBox txtWindowXY;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox txtScreenX;
+		private System.Windows.Forms.TextBox txtScreenXY;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label lblPropmt;

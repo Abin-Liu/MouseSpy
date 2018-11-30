@@ -70,13 +70,7 @@ namespace Win32API
 		public static extern bool ClientToScreen(IntPtr hwnd, out Point lpPoint);
 
 		[DllImport("user32.dll")]
-		public static extern bool ScreenToClient(IntPtr hwnd, out Point lpPoint);
-
-		[DllImport("user32.dll")]
-		public static extern bool WindowToScreen(IntPtr hwnd, out Point lpPoint);
-
-		[DllImport("user32.dll")]
-		public static extern bool ScreenToWindow(IntPtr hwnd, out Point lpPoint);
+		public static extern bool ScreenToClient(IntPtr hwnd, out Point lpPoint);		
 
 		[DllImport("user32.dll")]
 		public static extern IntPtr GetForegroundWindow();
