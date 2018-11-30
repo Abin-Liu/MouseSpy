@@ -1,9 +1,9 @@
-C:\Work\Jabil Projects\MouseSpy\MouseSpy\bin\Debug\MouseSpy.exe
-C:\Work\Jabil Projects\MouseSpy\MouseSpy\bin\Debug\MouseSpy.pdb
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.csprojAssemblyReference.cache
-C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.Form1.resources
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.Properties.Resources.resources
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.csproj.GenerateResource.cache
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.csproj.CoreCompileInputs.cache
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.exe
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.pdb
+C:\Work\Jabil Projects\MouseSpy\MouseSpy\bin\MouseSpy.exe
+C:\Work\Jabil Projects\MouseSpy\MouseSpy\bin\MouseSpy.pdb
+C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Debug\MouseSpy.FormMain.resources

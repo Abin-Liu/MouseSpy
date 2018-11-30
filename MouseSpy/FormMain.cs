@@ -77,17 +77,9 @@ namespace MouseSpy
 
 			Point screen;
 			Input.GetCursorPos(out screen);
-			
 
-			Rectangle rect = new Rectangle();
-			Window.GetWindowRect(foreground, out rect);
-
-			Point window = new Point(screen.X - rect.X, screen.Y - rect.Y);
-
-			Point offset = new Point(0, 0);
-			Window.ScreenToClient(foreground, out offset);
-			Point client = new Point(screen.X, screen.Y);
-			client.Offset(offset);
+			Point window = Window.ScreenToWindow(foreground, screen);
+			Point client = Window.ScreenToClient(foreground, screen);			
 
 			txtScreenXY.Text = string.Format("{0}, {1}", screen.X, screen.Y);			
 			txtWindowXY.Text = string.Format("{0}, {1}", window.X, window.Y);
@@ -100,6 +92,6 @@ namespace MouseSpy
 			string hex = string.Format("{0:X2}, {1:X2}, {2:X2}", color.R, color.G, color.B);
 			txtPixelDec.Text = dec;
 			txtPixelHex.Text = hex;
-		}
+		}		
 	}
 }

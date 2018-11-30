@@ -66,11 +66,51 @@ namespace Win32API
 		[DllImport("user32.dll")]
 		public static extern bool GetClientRect(IntPtr hwnd, out Rectangle lpRect);
 
-		[DllImport("user32.dll")]
-		public static extern bool ClientToScreen(IntPtr hwnd, out Point lpPoint);
+		[DllImport("user32.dll", EntryPoint = "ClientToScreen")]
+		static extern bool _ClientToScreen(IntPtr hwnd, out Point lpPoint);
 
-		[DllImport("user32.dll")]
-		public static extern bool ScreenToClient(IntPtr hwnd, out Point lpPoint);		
+		public static Point ClientToScreen(IntPtr hwnd, Point point)
+		{
+			Point offset;
+			_ClientToScreen(hwnd, out offset);
+			point.Offset(offset);
+			return point;
+		}
+
+		[DllImport("user32.dll", EntryPoint = "ScreenToClient")]
+		static extern bool _ScreenToClient(IntPtr hwnd, out Point lpPoint);
+
+		public static Point ScreenToClient(IntPtr hwnd, Point point)
+		{
+			Point offset;
+			_ScreenToClient(hwnd, out offset);
+			point.Offset(offset);
+			return point;
+		}
+
+		public static Point WindowToScreen(IntPtr hwnd, Point point)
+		{
+			Rectangle rect = new Rectangle();
+			if (GetWindowRect(hwnd, out rect))
+			{
+				point.X += rect.X;
+				point.Y += rect.Y;
+			}
+			
+			return point;
+		}
+
+		public static Point ScreenToWindow(IntPtr hwnd, Point point)
+		{
+			Rectangle rect = new Rectangle();
+			if (GetWindowRect(hwnd, out rect))
+			{
+				point.X -= rect.X;
+				point.Y -= rect.Y;
+			}
+			
+			return point;
+		}
 
 		[DllImport("user32.dll")]
 		public static extern IntPtr GetForegroundWindow();
