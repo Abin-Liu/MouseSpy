@@ -34,7 +34,7 @@ namespace MouseSpy
 		void OnStart()
 		{
 			this.Text = "MouseSpy - Started";
-			lblPropmt.Text = "Release the Ctrl key to stop";
+			lblPropmt.Text = "Release Ctrl-Alt keys to stop";
 			dc = GDI.GetDC(IntPtr.Zero);
 		}
 
@@ -42,14 +42,14 @@ namespace MouseSpy
 		{
 			GDI.ReleaseDC(IntPtr.Zero, dc);
 			this.Text = "MouseSpy - Stopped";
-			lblPropmt.Text = "Hold the Ctrl key to start";
+			lblPropmt.Text = "Hold Ctrl-Alt keys to start";
 		}
 
 		bool keydown = false;
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			bool wasDown = keydown;
-			keydown = Input.IsKeyDown(Keys.ControlKey);
+			keydown = Input.IsKeyDown(Keys.ControlKey) && Input.IsKeyDown(Keys.Menu);
 			if (!wasDown && keydown)
 			{
 				OnStart();

@@ -7,3 +7,12 @@ C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.exe
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.pdb
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.csprojAssemblyReference.cache
 C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.FormMain.resources
+D:\Jabil Projects\MouseSpy\MouseSpy\bin\MouseSpy.exe
+D:\Jabil Projects\MouseSpy\MouseSpy\bin\MouseSpy.pdb
+D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.csprojAssemblyReference.cache
+D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.FormMain.resources
+D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.Properties.Resources.resources
+D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.csproj.GenerateResource.cache
+D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.csproj.CoreCompileInputs.cache
+D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.exe
+D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.pdb
