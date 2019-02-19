@@ -38,9 +38,9 @@
 			this.txtWindowHandle = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.txtPixelHex = new System.Windows.Forms.TextBox();
-			this.txtPixelDec = new System.Windows.Forms.TextBox();
-			this.label9 = new System.Windows.Forms.Label();
+			this.btnRegain = new System.Windows.Forms.Button();
+			this.txtCurrentPixel = new System.Windows.Forms.TextBox();
+			this.txtPixel = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtClientXY = new System.Windows.Forms.TextBox();
 			this.txtWindowXY = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.lblPropmt = new System.Windows.Forms.Label();
+			this.chkHex = new System.Windows.Forms.CheckBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
@@ -128,9 +129,10 @@
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.Controls.Add(this.txtPixelHex);
-			this.groupBox2.Controls.Add(this.txtPixelDec);
-			this.groupBox2.Controls.Add(this.label9);
+			this.groupBox2.Controls.Add(this.chkHex);
+			this.groupBox2.Controls.Add(this.btnRegain);
+			this.groupBox2.Controls.Add(this.txtCurrentPixel);
+			this.groupBox2.Controls.Add(this.txtPixel);
 			this.groupBox2.Controls.Add(this.label8);
 			this.groupBox2.Controls.Add(this.txtClientXY);
 			this.groupBox2.Controls.Add(this.txtWindowXY);
@@ -145,43 +147,44 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Cursor Information";
 			// 
-			// txtPixelHex
+			// btnRegain
 			// 
-			this.txtPixelHex.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.txtPixelHex.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtPixelHex.Location = new System.Drawing.Point(292, 51);
-			this.txtPixelHex.Name = "txtPixelHex";
-			this.txtPixelHex.ReadOnly = true;
-			this.txtPixelHex.Size = new System.Drawing.Size(107, 20);
-			this.txtPixelHex.TabIndex = 11;
+			this.btnRegain.Location = new System.Drawing.Point(218, 50);
+			this.btnRegain.Name = "btnRegain";
+			this.btnRegain.Size = new System.Drawing.Size(61, 23);
+			this.btnRegain.TabIndex = 8;
+			this.btnRegain.Text = "Regain";
+			this.btnRegain.UseVisualStyleBackColor = true;
+			this.btnRegain.Click += new System.EventHandler(this.btnRegain_Click);
 			// 
-			// txtPixelDec
+			// txtCurrentPixel
 			// 
-			this.txtPixelDec.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.txtPixelDec.ImeMode = System.Windows.Forms.ImeMode.Off;
-			this.txtPixelDec.Location = new System.Drawing.Point(292, 21);
-			this.txtPixelDec.Name = "txtPixelDec";
-			this.txtPixelDec.ReadOnly = true;
-			this.txtPixelDec.Size = new System.Drawing.Size(107, 20);
-			this.txtPixelDec.TabIndex = 9;
+			this.txtCurrentPixel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.txtCurrentPixel.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.txtCurrentPixel.Location = new System.Drawing.Point(292, 51);
+			this.txtCurrentPixel.Name = "txtCurrentPixel";
+			this.txtCurrentPixel.ReadOnly = true;
+			this.txtCurrentPixel.Size = new System.Drawing.Size(107, 20);
+			this.txtCurrentPixel.TabIndex = 9;
 			// 
-			// label9
+			// txtPixel
 			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(222, 55);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(57, 13);
-			this.label9.TabIndex = 10;
-			this.label9.Text = "Pixel HEX:";
+			this.txtPixel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.txtPixel.ImeMode = System.Windows.Forms.ImeMode.Off;
+			this.txtPixel.Location = new System.Drawing.Point(292, 21);
+			this.txtPixel.Name = "txtPixel";
+			this.txtPixel.ReadOnly = true;
+			this.txtPixel.Size = new System.Drawing.Size(107, 20);
+			this.txtPixel.TabIndex = 7;
 			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Location = new System.Drawing.Point(222, 24);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(57, 13);
-			this.label8.TabIndex = 8;
-			this.label8.Text = "Pixel DEC:";
+			this.label8.Size = new System.Drawing.Size(58, 13);
+			this.label8.TabIndex = 6;
+			this.label8.Text = "Pixel RGB:";
 			// 
 			// txtClientXY
 			// 
@@ -191,7 +194,7 @@
 			this.txtClientXY.Name = "txtClientXY";
 			this.txtClientXY.ReadOnly = true;
 			this.txtClientXY.Size = new System.Drawing.Size(107, 20);
-			this.txtClientXY.TabIndex = 3;
+			this.txtClientXY.TabIndex = 5;
 			// 
 			// txtWindowXY
 			// 
@@ -201,7 +204,7 @@
 			this.txtWindowXY.Name = "txtWindowXY";
 			this.txtWindowXY.ReadOnly = true;
 			this.txtWindowXY.Size = new System.Drawing.Size(107, 20);
-			this.txtWindowXY.TabIndex = 5;
+			this.txtWindowXY.TabIndex = 3;
 			// 
 			// label5
 			// 
@@ -209,7 +212,7 @@
 			this.label5.Location = new System.Drawing.Point(14, 83);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(56, 13);
-			this.label5.TabIndex = 2;
+			this.label5.TabIndex = 4;
 			this.label5.Text = "Client  XY:";
 			// 
 			// label6
@@ -218,7 +221,7 @@
 			this.label6.Location = new System.Drawing.Point(14, 55);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(66, 13);
-			this.label6.TabIndex = 4;
+			this.label6.TabIndex = 2;
 			this.label6.Text = "Window XY:";
 			// 
 			// txtScreenXY
@@ -252,9 +255,20 @@
 			this.lblPropmt.ForeColor = System.Drawing.SystemColors.HotTrack;
 			this.lblPropmt.Location = new System.Drawing.Point(12, 260);
 			this.lblPropmt.Name = "lblPropmt";
-			this.lblPropmt.Size = new System.Drawing.Size(305, 13);
-			this.lblPropmt.TabIndex = 3;
-			this.lblPropmt.Text = "Hold/release the CTRL key to start/stop capturing...";
+			this.lblPropmt.Size = new System.Drawing.Size(289, 13);
+			this.lblPropmt.TabIndex = 2;
+			this.lblPropmt.Text = "Hold/release Ctrl-Alt key to start/stop capturing...";
+			// 
+			// chkHex
+			// 
+			this.chkHex.AutoSize = true;
+			this.chkHex.Location = new System.Drawing.Point(225, 83);
+			this.chkHex.Name = "chkHex";
+			this.chkHex.Size = new System.Drawing.Size(119, 17);
+			this.chkHex.TabIndex = 10;
+			this.chkHex.Text = "Hexadecimal format";
+			this.chkHex.UseVisualStyleBackColor = true;
+			this.chkHex.CheckedChanged += new System.EventHandler(this.chkHex_CheckedChanged);
 			// 
 			// FormMain
 			// 
@@ -292,9 +306,8 @@
 		private System.Windows.Forms.TextBox txtWindowHandle;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.TextBox txtPixelHex;
-		private System.Windows.Forms.TextBox txtPixelDec;
-		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.TextBox txtCurrentPixel;
+		private System.Windows.Forms.TextBox txtPixel;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox txtClientXY;
 		private System.Windows.Forms.TextBox txtWindowXY;
@@ -304,6 +317,8 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Timer timer1;
 		private System.Windows.Forms.Label lblPropmt;
+		private System.Windows.Forms.Button btnRegain;
+		private System.Windows.Forms.CheckBox chkHex;
 	}
 }
 
