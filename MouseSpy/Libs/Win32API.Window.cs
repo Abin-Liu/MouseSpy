@@ -7,7 +7,7 @@ namespace Win32API
 {
 	public delegate bool EnumWindowsCallBack(IntPtr hwnd, int lParam);	
 
-	class Window
+	public class Window
 	{
 		[DllImport("user32.dll")]
 		public extern static IntPtr FindWindow(string className, string windowName);

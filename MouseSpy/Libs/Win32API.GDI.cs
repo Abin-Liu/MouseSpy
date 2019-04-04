@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Win32API
 {
-	class GDI
+	public class GDI
 	{
 		[DllImport("user32.dll")]
 		public static extern IntPtr GetDC(IntPtr hwnd);

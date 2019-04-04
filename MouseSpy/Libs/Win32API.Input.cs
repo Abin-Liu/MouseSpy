@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Win32API
 {
-	class Input
+	public class Input
 	{
 		public enum ModKeys { None = 0, Shift = 0x01, Control = 0x02, Alt = 0x04 }
 
@@ -177,14 +177,6 @@ namespace Win32API
 		static extern int GetKeyboardState(byte[] states);
 
 		[DllImport("user32.dll")]
-		static extern void keybd_event(byte vkCode, byte scan, int flags, int extraInfo);
-
-		[DllImport("user32.dll")]
-		public static extern short GetAsyncKeyState(Keys key);
-
-		public static bool IsKeyDown(Keys key)
-		{
-			return (GetAsyncKeyState(key) & 0x8000) != 0;
-		}
+		static extern void keybd_event(byte vkCode, byte scan, int flags, int extraInfo);		
 	}
 }
