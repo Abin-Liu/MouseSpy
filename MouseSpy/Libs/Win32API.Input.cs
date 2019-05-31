@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Win32API
 {
+	public enum ModKeys { None = 0, Shift = 0x01, Control = 0x02, Alt = 0x04 };
+
 	public class Input
 	{
-		public enum ModKeys { None = 0, Shift = 0x01, Control = 0x02, Alt = 0x04 }
-
 		public static void MouseMove(int x, int y)
 		{
 			mouse_event(MOUSEEVENTF_MOVE, 5000, 5000, 0, 0);			
@@ -171,7 +170,14 @@ namespace Win32API
 		public static extern int SetCursorPos(int x, int y);
 
 		[DllImport("user32.dll")]
-		public static extern int GetCursorPos(out Point point);
+		static extern int GetCursorPos(out Point point);
+
+		public static Point GetCursorPos()
+		{
+			Point point = new Point(0, 0);
+			GetCursorPos(out point);
+			return point;
+		}
 
 		[DllImport("user32.dll")]
 		static extern int GetKeyboardState(byte[] states);
