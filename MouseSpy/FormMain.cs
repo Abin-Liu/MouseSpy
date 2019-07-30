@@ -106,9 +106,8 @@ namespace MouseSpy
 		void SpyWindow()
 		{
 			m_foreground = Window.GetForegroundWindow();
-			string windowText, className;
-			Window.GetWindowText(m_foreground, out windowText);
-			Window.GetClassName(m_foreground, out className);
+			string windowText = Window.GetWindowText(m_foreground);
+			string className = Window.GetClassName(m_foreground);			
 			txtWindowHandle.Text = string.Format("0x{0:X8}", (int)m_foreground);
 			txtWindowText.Text = windowText;
 			txtClassName.Text = className;
@@ -116,9 +115,13 @@ namespace MouseSpy
 
 		void SpyLocation()
 		{
-			Input.GetCursorPos(out m_screen);
-			Point window = Window.ScreenToWindow(m_foreground, m_screen);
-			Point client = Window.ScreenToClient(m_foreground, m_screen);
+			m_screen = Input.GetCursorPos();
+			Point window = m_screen;
+			Point client = m_screen;
+
+			window.Offset(Window.ScreenToWindow(m_foreground));
+			client.Offset(Window.ScreenToClient(m_foreground));
+
 			txtScreenXY.Text = string.Format("{0}, {1}", m_screen.X, m_screen.Y);
 			txtWindowXY.Text = string.Format("{0}, {1}", window.X, window.Y);
 			txtClientXY.Text = string.Format("{0}, {1}", client.X, client.Y);

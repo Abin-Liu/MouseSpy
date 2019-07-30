@@ -38,6 +38,7 @@
 			this.txtWindowHandle = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.chkHex = new System.Windows.Forms.CheckBox();
 			this.btnRegain = new System.Windows.Forms.Button();
 			this.txtCurrentPixel = new System.Windows.Forms.TextBox();
 			this.txtPixel = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			this.lblPropmt = new System.Windows.Forms.Label();
-			this.chkHex = new System.Windows.Forms.CheckBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
@@ -146,6 +146,17 @@
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Cursor Information";
+			// 
+			// chkHex
+			// 
+			this.chkHex.AutoSize = true;
+			this.chkHex.Location = new System.Drawing.Point(225, 83);
+			this.chkHex.Name = "chkHex";
+			this.chkHex.Size = new System.Drawing.Size(119, 17);
+			this.chkHex.TabIndex = 10;
+			this.chkHex.Text = "Hexadecimal format";
+			this.chkHex.UseVisualStyleBackColor = true;
+			this.chkHex.CheckedChanged += new System.EventHandler(this.chkHex_CheckedChanged);
 			// 
 			// btnRegain
 			// 
@@ -259,17 +270,6 @@
 			this.lblPropmt.TabIndex = 2;
 			this.lblPropmt.Text = "Hold/release Ctrl-Alt key to start/stop capturing...";
 			// 
-			// chkHex
-			// 
-			this.chkHex.AutoSize = true;
-			this.chkHex.Location = new System.Drawing.Point(225, 83);
-			this.chkHex.Name = "chkHex";
-			this.chkHex.Size = new System.Drawing.Size(119, 17);
-			this.chkHex.TabIndex = 10;
-			this.chkHex.Text = "Hexadecimal format";
-			this.chkHex.UseVisualStyleBackColor = true;
-			this.chkHex.CheckedChanged += new System.EventHandler(this.chkHex_CheckedChanged);
-			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,7 +281,6 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
-			this.MinimizeBox = false;
 			this.Name = "FormMain";
 			this.Text = "MouseSpy";
 			this.TopMost = true;
