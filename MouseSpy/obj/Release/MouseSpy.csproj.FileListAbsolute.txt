@@ -15,4 +15,3 @@ D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.csproj.GenerateResource
 D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.csproj.CoreCompileInputs.cache
 D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.exe
 D:\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.pdb
-C:\Work\Jabil Projects\MouseSpy\MouseSpy\obj\Release\MouseSpy.csprojAssemblyReference.cache
