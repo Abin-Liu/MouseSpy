@@ -449,7 +449,7 @@ namespace Win32API
 		// 解析按键键值
 		static Keys ParseKey(string name)
 		{
-			name = name.Trim().ToUpper();
+			name = name.ToUpper();
 			switch (name)
 			{
 				#region 鼠标键
@@ -506,6 +506,7 @@ namespace Win32API
 
 				case "ENTER":
 				case "RETURN":
+				case "\n":
 					name = "Enter";
 					break;
 
@@ -546,6 +547,7 @@ namespace Win32API
 					break;
 
 				case "TAB":
+				case "\t":
 					name = "Tab";
 					break;
 
@@ -634,6 +636,7 @@ namespace Win32API
 					name = "Oem2";
 					break;
 
+				case " ":
 				case "SPACE":
 					name = "Space";
 					break;
@@ -778,7 +781,7 @@ namespace Win32API
 				match = RegexCurly.Match(text);
 				if (match.Success)
 				{
-					action.KeyList.Add(new KeyPress(match.Groups[1].Value.Trim()));
+					action.KeyList.Add(new KeyPress(match.Groups[1].Value));
 					dataList.Add(action);
 					text = text.Substring(match.Length);
 					continue;
@@ -837,7 +840,7 @@ namespace Win32API
 				if (match.Success)
 				{
 					length = match.Length;
-					value = match.Groups[1].Value.Trim();
+					value = match.Groups[1].Value;
 				}
 				else
 				{
